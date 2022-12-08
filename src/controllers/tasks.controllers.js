@@ -3,10 +3,10 @@ import Task from "../model/Task";
 export const renderTasks = async (req, res) => {
   try {
     const tasks = await Task.find().lean();
-    res.render("index", {
+    res.render("index",{
       tasks,
     });
-  } catch (error) {
+  } catch (error){
     console.log({ error });
     return res.render("error", { errorMessage: error.message });
   }
@@ -15,6 +15,7 @@ export const renderTasks = async (req, res) => {
 export const createTask = async (req, res, next) => {
   try {
     const task = new Task(req.body);
+      //datos(req.body)
     await task.save();
     res.redirect("/");
   } catch (error) {

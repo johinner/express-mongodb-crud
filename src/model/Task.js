@@ -2,9 +2,27 @@ import { Schema, model } from "mongoose";
 
 const TaskSchema = Schema(
   {
-    title: { type: String, required: true, trim: true, unique: true },
-    description: {
+    tournament: {
       type: String,
+      trim: true
+    },
+    event: {
+      type: String,
+    },
+    strategy: {
+      type: String,
+      trim: true,
+    },
+    betAmount: {
+      type: Number,
+      trim: true,
+    },
+    cuota: {
+      type: Number,
+      trim: true,
+    },
+    utility: {
+      type: Number,
       trim: true,
     },
     done: {
@@ -19,3 +37,5 @@ const TaskSchema = Schema(
 );
 
 export default model("Task", TaskSchema);
+
+//required: true,  unique: true 

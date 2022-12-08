@@ -3,17 +3,25 @@
     <thead>
       <tr>
         <th>N°</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Operations</th>
+        <th>Tourney</th>
+        <th>Event</th>
+        <th>Strategy</th>
+        <th class="text-center">Stake</th>
+        <th class="text-center">Cuota</th>
+        <th class="text-center">Utility</th>
+        <th>Operation</th>
       </tr>
     </thead>
     <tbody>
       {{#each tasks}}
         <tr>
           <td>{{@index}}</td>
-          <td><strong>{{title}}</strong></td>
-          <td>{{description}}</td>
+          <td><strong>{{tournament}}</strong></td>
+          <td>{{event}}</td>
+          <td>{{strategy}}</td>
+          <td>{{betAmount}}</td>
+          <td>{{cuota}}</td>
+          <td>{{Utility}}</td>
           <td>
             {{#if done}}
               <a
