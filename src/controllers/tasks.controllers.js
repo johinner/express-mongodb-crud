@@ -2,9 +2,22 @@ import Task from "../model/Task";
 
 export const renderTasks = async (req, res) => {
   try {
+    const data = {
+      tournament: [
+        {option: "serie A"},
+        {option: "liga betplay"},
+        {option: "Copa Mundial"},
+      ],
+      strategy: [
+        {option: "Total Asiatico"},
+        {option: "Apuesta sin Empate"},
+        {option: "Ganador"},
+      ]
+    }
     const tasks = await Task.find().lean();
+    
     res.render("index",{
-      tasks,
+      tasks, data
     });
   } catch (error){
     console.log({ error });
@@ -14,8 +27,9 @@ export const renderTasks = async (req, res) => {
 
 export const createTask = async (req, res, next) => {
   try {
+
     const task = new Task(req.body);
-      //console.table(req.body)
+    console.table(task)
     await task.save();
     res.redirect("/");
   } catch (error) {
