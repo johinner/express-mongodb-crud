@@ -15,7 +15,7 @@ export const renderTasks = async (req, res) => {
 export const createTask = async (req, res, next) => {
   try {
     const task = new Task(req.body);
-      //datos(req.body)
+      //console.table(req.body)
     await task.save();
     res.redirect("/");
   } catch (error) {

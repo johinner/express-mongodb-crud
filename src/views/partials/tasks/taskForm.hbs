@@ -1,7 +1,7 @@
 <div class="card card-body p-4 rounded-0 bg-dark text-white">
   <h3>Add A Bet</h3>
-  <form name="betForm" action="/tasks/add" method="post">
-
+  <form name="betForm">
+{{!-- action="/tasks/add" method="post" --}}
     <div class="mb-3">
       <input name="date" type="date" class="form-control bg-dark text-white" />
     </div>
@@ -59,7 +59,7 @@
       >pre-registration</label>
     </div>
     <div class="d-grid gap-2">
-    <button class="btn btn-primary" type="submit">Add</button>
+    <button class="btn btn-primary" id="buttonBetForm">Add</button>
     </div>
   </form>
 </div>
